@@ -38,9 +38,9 @@ st.markdown(
 st.sidebar.header("Financial Inputs")
 st.sidebar.markdown("Enter the startup's financial data below:")
 
-rd_spend = st.sidebar.number_input("R&D Expenditure ($)", min_value=0.0, value=100000.0, step=1000.0)
-admin_spend = st.sidebar.number_input("Administration Costs ($)", min_value=0.0, value=50000.0, step=1000.0)
-market_spend = st.sidebar.number_input("Marketing Budget ($)", min_value=0.0, value=150000.0, step=1000.0)
+rd_spend = st.sidebar.number_input("R&D Expenditure (₹)", min_value=0.0, value=100000.0, step=1000.0)
+admin_spend = st.sidebar.number_input("Administration Costs (₹)", min_value=0.0, value=50000.0, step=1000.0)
+market_spend = st.sidebar.number_input("Marketing Budget (₹)", min_value=0.0, value=150000.0, step=1000.0)
 
 st.sidebar.markdown("---")
 st.sidebar.header("Geographical Data")
@@ -73,9 +73,9 @@ if model and scaler:
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric(label="Estimated Annual Profit", value=f"${prediction[0]:,.2f}")
+            st.metric(label="Estimated Annual Profit", value=f"₹{prediction[0]:,.2f}")
         with col2:
-            st.metric(label="Total Expenditure", value=f"${(rd_spend + admin_spend + market_spend):,.2f}")
+            st.metric(label="Total Expenditure", value=f"₹{(rd_spend + admin_spend + market_spend):,.2f}")
         with col3:
             st.metric(label="Primary Location", value=state)
             
